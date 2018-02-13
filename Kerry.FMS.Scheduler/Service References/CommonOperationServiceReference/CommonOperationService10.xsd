@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport.Commands" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport.Commands" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:complexType name="SoftDeleteJobCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTimestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoftDeleteJobCommand" nillable="true" type="tns:SoftDeleteJobCommand" />
+  <xs:complexType name="ArrayOfConsolCommandBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsolCommandBase" nillable="true" type="tns:ConsolCommandBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsolCommandBase" nillable="true" type="tns:ArrayOfConsolCommandBase" />
+  <xs:complexType name="ConsolCommandBase">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="House" nillable="true" type="q1:JobModelBase" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="Master" nillable="true" type="q2:JobModelBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsolCommandBase" nillable="true" type="tns:ConsolCommandBase" />
+  <xs:complexType name="AttachHouseToMasterCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConsolCommandBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AttachHouseToMasterCommand" nillable="true" type="tns:AttachHouseToMasterCommand" />
+  <xs:complexType name="DetachHouseFromMasterCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConsolCommandBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetachHouseFromMasterCommand" nillable="true" type="tns:DetachHouseFromMasterCommand" />
+</xs:schema>

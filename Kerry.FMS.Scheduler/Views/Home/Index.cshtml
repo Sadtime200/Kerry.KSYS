@@ -1,0 +1,180 @@
+﻿@model Kerry.FMS.Scheduler.Models.LogSearch
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    .col-md-8 > .col-md-3 {
+        padding-right: 0;
+    }
+
+        .col-md-8 > .col-md-3 > .col-md-12 {
+            padding-right: 0;
+        }
+</style>
+
+@using (@Ajax.BeginForm("TaskList", null,
+        new AjaxOptions()
+        {
+            LoadingElementId = "loading",
+            UpdateTargetId = "viewContent",
+            HttpMethod = "Get",
+            InsertionMode = InsertionMode.Replace
+        },
+        new
+        {
+            id = "frmFilter"
+        }
+        ))
+{
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+
+            <div class="row">
+                <div class="col-md-9">
+                    Schedule Task
+                </div>
+                <div class="col-md-3 text-right">
+                    <button type="submit" value="Refresh" class="btn btn-primary btn-md" onclick='this.form.action="@Url.Action("TaskList", new { SubmitType = "Refresh" })";'>@Html.Raw(Kerry.FMS.Scheduler.UI.Constant_Refresh)</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="loading" style="display: none;">
+            Loading...
+        </div>
+
+        <div id="viewContent">
+        </div>
+    </div>
+}
+
+
+
+@using (@Ajax.BeginForm("LoGList", null,
+        new AjaxOptions()
+        {
+            LoadingElementId = "LoGloading",
+            UpdateTargetId = "LoGviewContent",
+            HttpMethod = "Get",
+            InsertionMode = InsertionMode.Replace
+        },
+        new
+        {
+            id = "LoGfrmFilter"
+        }
+        ))
+{
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+
+            <div class="row">
+                <div class="col-md-2">
+                    Schedule Log
+                </div>
+                <div class="col-md-8">
+                    <div class="input-group col-md-3">
+                        <div class="input-group col-md-12">
+                            @Html.TextBoxFor(model => Model.LogDate_Search, "{0:yyyy/MM/dd}", new { @class = "form-group form-control control-datetime-pick", @placeholder = "Log Date" })
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+                        <div class="input-group col-md-12">
+                            @Html.ValidationMessageFor(model => model.LogDate_Search)
+                        </div>
+                    </div>
+                    <div class="input-group col-md-3">
+                        <div class="input-group col-md-12">
+                            @Html.DropDownListFor(model => model.JobName_Search, Model.Jobs.AsEnumerable(), new { @class = "form-group form-control" })
+                        </div>
+                        <div class="input-group col-md-12">
+                            @Html.ValidationMessageFor(model => model.JobName_Search)
+                        </div>
+                    </div>
+                    <div class="input-group col-md-3">
+                        <div class="input-group col-md-12">
+                            @Html.DropDownListFor(model => model.JobType_Search, Model.Types.AsEnumerable(), new { @class = "form-group form-control" })
+                        </div>
+                    </div>
+                    <div class="input-group col-md-3">
+                        @Html.TextBoxFor(model => Model.Key_Search, new { @class = "form-group form-control", @placeholder = "please input the search keys" })
+                    </div>
+                </div>
+                <div class="col-md-2 text-right">
+                    <button type="submit" value="Refresh" class="btn btn-primary btn-md">@Html.Raw(Kerry.FMS.Scheduler.UI.Constant_Refresh)</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="LoGloading" style="display: none;">
+            Loading...
+        </div>
+
+        <div id="LoGviewContent" style="max-height:500px;overflow-x:auto;">
+        </div>
+    </div>
+}
+
+
+<div id="dialogOrigin" title="Cron-Expression" style="display: none; overflow:hidden;">
+    <p>
+        Please Input the cron-expression
+    </p>
+    <input type="text" step="any" name="cron_expression" id="cron_expression" style="width:16em;">
+</div>
+
+<script>
+    $(function () {
+        $(".control-datetime-pick").datetimepicker({
+            format: 'Y/m/d',
+            timepicker: false
+        });
+        $('#frmFilter').submit();
+        $('form').removeData('validator');
+        $('form').removeData('unobtrusiveValidation');
+        $.validator.unobtrusive.parse('form');
+    });
+
+    function EditCronString(TaskName, CronString) {
+        $("input[name=cron_expression]").val(CronString);
+
+
+        $("#dialogOrigin").dialog({
+            modal: true,
+            position: { my: "center", at: "center", of: window },
+            close: function () {
+                $(this).dialog("destroy");
+            },
+            buttons: {
+                "Save": function () {
+                    var CronString = $("input[name=cron_expression]").val();
+
+                    if (CronString == "") {
+                        BootstrapDialog.alert('cron-expression not null！');
+                        return false;
+                    }
+                    $.ajax({
+                        url: "@Url.Action("EditCronString")",
+                        type: "POST",
+                        dataType: "json",
+                        data: { TaskName: TaskName, CronString: CronString },
+                        success: function (data) {
+                            if (data == "Success") {
+                                $("#dialogOrigin").dialog("destroy");
+                                $('#frmFilter').submit();
+                            }
+                            else {
+                                BootstrapDialog.alert(data);
+                            }
+                        }
+                    })
+                }
+            }
+        });
+    }
+</script>

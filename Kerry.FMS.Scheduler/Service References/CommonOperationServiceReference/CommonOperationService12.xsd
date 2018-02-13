@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfAirline">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Airline" nillable="true" type="tns:Airline" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAirline" nillable="true" type="tns:ArrayOfAirline" />
+  <xs:complexType name="Airline">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirlineCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="Key" nillable="true" type="q1:CompanyKey" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameLocal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Airline" nillable="true" type="tns:Airline" />
+  <xs:complexType name="ArrayOfCompany">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompany" nillable="true" type="tns:ArrayOfCompany" />
+  <xs:complexType name="Company">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CompanyRoleCodeList" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="Key" nillable="true" type="q3:CompanyKey" />
+      <xs:element minOccurs="0" name="LocalCurrency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NameLocal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="CompanyVariantSearchParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BizType" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RoleCodeList" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="VariantTypeList" nillable="true" type="q5:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyVariantSearchParameters" nillable="true" type="tns:CompanyVariantSearchParameters" />
+  <xs:complexType name="ArrayOfCompanyWithAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyWithAddress" nillable="true" type="tns:CompanyWithAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyWithAddress" nillable="true" type="tns:ArrayOfCompanyWithAddress" />
+  <xs:complexType name="CompanyWithAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BizType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="tns:Company" />
+      <xs:element minOccurs="0" name="CompanyVarName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sno" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyWithAddress" nillable="true" type="tns:CompanyWithAddress" />
+  <xs:complexType name="WarehouseCompanySearchParameters">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BizType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WarehouseType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WarehouseCompanySearchParameters" nillable="true" type="tns:WarehouseCompanySearchParameters" />
+  <xs:complexType name="NumberingReserveModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q6:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BizType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerPartyId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DocType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PoolCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PoolGroup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PoolGroupDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReserveBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReserveDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ReserveNumberCount" type="xs:int" />
+          <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NumberingReserveModel" nillable="true" type="tns:NumberingReserveModel" />
+  <xs:complexType name="ArrayOfMilestoneBatchUpdateModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MilestoneBatchUpdateModel" nillable="true" type="tns:MilestoneBatchUpdateModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMilestoneBatchUpdateModel" nillable="true" type="tns:ArrayOfMilestoneBatchUpdateModel" />
+  <xs:complexType name="MilestoneBatchUpdateModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTimestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MilestoneBatchUpdateModel" nillable="true" type="tns:MilestoneBatchUpdateModel" />
+  <xs:complexType name="FileInfoModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q7:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FileBytes" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Length" type="xs:long" />
+          <xs:element minOccurs="0" name="fullName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FileInfoModel" nillable="true" type="tns:FileInfoModel" />
+  <xs:complexType name="MailModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q8:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Attachment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bcc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="To" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MailModel" nillable="true" type="tns:MailModel" />
+  <xs:complexType name="ArrayOfEmailTagModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailTagModel" nillable="true" type="tns:EmailTagModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailTagModel" nillable="true" type="tns:ArrayOfEmailTagModel" />
+  <xs:complexType name="EmailTagModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q9:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TagCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TagValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmailTagModel" nillable="true" type="tns:EmailTagModel" />
+</xs:schema>

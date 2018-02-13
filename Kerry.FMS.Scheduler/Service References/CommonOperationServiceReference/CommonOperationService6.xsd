@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirImport" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport.Commands" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.EDoc" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.DB.Models" />
+  <xs:element name="GetDefaultMilestoneEvents">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="shipmentType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultMilestoneEventsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="GetDefaultMilestoneEventsResult" nillable="true" type="q1:ArrayOfMilestoneEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirportForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirportForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirImport" minOccurs="0" name="GetAirportForLookupResult" nillable="true" type="q2:ArrayOfAirport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirlinesForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAirlinesForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="GetAirlinesForLookupResult" nillable="true" type="q3:ArrayOfAirline" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartyMasterForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="roleCodes" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartyMasterForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="GetPartyMasterForLookupResult" nillable="true" type="q5:ArrayOfCompany" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartyMasterWithAddressForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="parameters" nillable="true" type="q6:CompanyVariantSearchParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartyMasterWithAddressForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="GetPartyMasterWithAddressForLookupResult" nillable="true" type="q7:ArrayOfCompanyWithAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartyMasterWarehouseLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="parameters" nillable="true" type="q8:WarehouseCompanySearchParameters" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartyMasterWarehouseLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="GetPartyMasterWarehouseLookupResult" nillable="true" type="q9:ArrayOfCompanyWithAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoftDeleteJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport.Commands" minOccurs="0" name="command" nillable="true" type="q10:SoftDeleteJobCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SoftDeleteJobResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteConsolOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="model" nillable="true" type="q11:ConsolOperationModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExecuteConsolOperationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobEventOrEventGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="Model" nillable="true" type="q12:JobModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobEventOrEventGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="GetJobEventOrEventGroupsResult" nillable="true" type="q13:ArrayOfEventGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChargeTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="Model" nillable="true" type="q14:ParameterModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChargeTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="GetChargeTemplatesResult" nillable="true" type="q15:ArrayOfChargeTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOtherChargeTemplates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="model" nillable="true" type="q16:OtherParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOtherChargeTemplatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="GetOtherChargeTemplatesResult" nillable="true" type="q17:ArrayOfChargeTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LockJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LockJobResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnlockJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UnlockJobResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoJobLock">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoJobLockResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReserveNumbers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="newReservation" nillable="true" type="q18:NumberingReserveModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReserveNumbersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReserveNumbersResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="departmentId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="workType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="GetUserForLookupResult" nillable="true" type="q19:ArrayOfUserModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeptForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeptForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="GetDeptForLookupResult" nillable="true" type="q20:ArrayOfDepartment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationForLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="stringtoSearch" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="allowedStations" nillable="true" type="q21:ArrayOfstring" />
+        <xs:element minOccurs="0" name="isCompanyRequired" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStationForLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" minOccurs="0" name="GetStationForLookupResult" nillable="true" type="q22:ArrayOfStation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchUpdateMilestone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="updateList" nillable="true" type="q23:ArrayOfMilestoneBatchUpdateModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BatchUpdateMilestoneResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filePath" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="DownloadFileResult" nillable="true" type="q24:FileInfoModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="path" nillable="true" type="xs:string" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="request" nillable="true" type="q25:FileInfoModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UploadFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jobId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetJobDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.EDoc" minOccurs="0" name="GetJobDocResult" nillable="true" type="q26:JobDocList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveJobDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.EDoc" minOccurs="0" name="jobDocList" nillable="true" type="q27:ArrayOfJobDocModel" />
+        <xs:element minOccurs="0" name="jobId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveJobDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveJobDocResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="mailModel" nillable="true" type="q28:MailModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendEmailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailByTemplate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="templateCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyId" type="xs:int" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="emailTags" nillable="true" type="q29:ArrayOfEmailTagModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailByTemplateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendEmailByTemplateResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratingNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="bizType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratingNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratingNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratingNumberWithContext">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Kerry.FMS.DB.Models" minOccurs="0" name="ctx" nillable="true" type="q30:FmsContext" />
+        <xs:element minOccurs="0" name="companyId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="bizType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratingNumberWithContextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratingNumberWithContextResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

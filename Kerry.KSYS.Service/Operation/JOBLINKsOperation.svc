@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Kerry.KSYS.Service.Operation.JOBLINKsOperation" CodeBehind="JOBLINKsOperation.svc.cs" %>

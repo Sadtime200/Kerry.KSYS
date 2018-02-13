@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<job-scheduling-data>
+  <schedule>
+    <name>JobConsolUnidSupplymentScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JobConsolUnidSupplymentScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0/10 * * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+
+  <schedule>
+    <name>JobConsolUnidUpdateScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JobConsolUnidUpdateScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0/10 * * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+
+  <schedule>
+    <name>JobLinkPatchScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JobLinkPatchScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0/10 * * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+
+</job-scheduling-data>

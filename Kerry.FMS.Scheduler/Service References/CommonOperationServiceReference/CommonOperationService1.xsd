@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Maintenance" />
+  <xs:complexType name="DomainModelBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OperationEnum" type="tns:DataOperationEnum" />
+      <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdateTimestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DomainModelBase" nillable="true" type="tns:DomainModelBase" />
+  <xs:simpleType name="DataOperationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Add" />
+      <xs:enumeration value="Delete" />
+      <xs:enumeration value="Update" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataOperationEnum" nillable="true" type="tns:DataOperationEnum" />
+  <xs:complexType name="CompanyKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyKey" nillable="true" type="tns:CompanyKey" />
+  <xs:complexType name="JobModelBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GlobalShipmentId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HasChildren" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasCosts" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasRevenues" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsConsolClosed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="JobNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MasterNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ShipmentNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipmentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationId" type="xs:int" />
+          <xs:element minOccurs="0" name="StationRole" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobModelBase" nillable="true" type="tns:JobModelBase" />
+  <xs:complexType name="LocationKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="countryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="locationCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationKey" nillable="true" type="tns:LocationKey" />
+  <xs:complexType name="ArrayOfUserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserModel" nillable="true" type="tns:UserModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserModel" nillable="true" type="tns:ArrayOfUserModel" />
+  <xs:complexType name="UserModel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateFormat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCmd" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCmi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsCs" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsDomainUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOpr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSales" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSystemAdmin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocalName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Maintenance" minOccurs="0" name="MainStation" nillable="true" type="q1:StationModel" />
+          <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RevCostPanelLayout" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationCode" nillable="true" type="tns:LookupPlaceholder" />
+          <xs:element minOccurs="0" name="SunAcCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TelExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserModel" nillable="true" type="tns:UserModel" />
+  <xs:complexType name="LookupPlaceholder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookupPlaceholder" nillable="true" type="tns:LookupPlaceholder" />
+  <xs:complexType name="ArrayOfDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Department" nillable="true" type="tns:Department" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartment" nillable="true" type="tns:ArrayOfDepartment" />
+  <xs:complexType name="Department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsMain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Department" nillable="true" type="tns:Department" />
+  <xs:complexType name="ArrayOfStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Station" nillable="true" type="tns:Station" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStation" nillable="true" type="tns:ArrayOfStation" />
+  <xs:complexType name="Station">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Hierarchy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationNameEng" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationNameLocal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Station" nillable="true" type="tns:Station" />
+</xs:schema>

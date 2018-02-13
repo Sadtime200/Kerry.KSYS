@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirImport" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirImport" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" />
+  <xs:complexType name="ArrayOfAirport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Airport" nillable="true" type="tns:Airport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAirport" nillable="true" type="tns:ArrayOfAirport" />
+  <xs:complexType name="Airport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IataCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Airport" nillable="true" type="tns:Airport" />
+  <xs:complexType name="AIAWBModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q1:JobModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AirlineDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AttachedHouses" nillable="true" type="tns:ArrayOfAIAWBModel" />
+          <xs:element minOccurs="0" name="BizType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChargeableWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Coloader" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="CommodityCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommodityDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Consignee" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="ConsigneeAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConsigneeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="CustomerServiceDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerServiceDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerServiceUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerServiceUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsDeclareDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsDeclareDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsDeclareUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsDeclareUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsInspectDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsInspectDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsInspectUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsInspectUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DeletedJobRefList" nillable="true" type="tns:ArrayOfJobRefModel" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="q1:LocationKey" />
+          <xs:element minOccurs="0" name="DestinationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EtaDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EtdDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FlightNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FreightChargeAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="FreightPaymentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GrossWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="HandlingInformation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Incoterms" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPendingJob" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPreAlert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobRefList" nillable="true" type="tns:ArrayOfJobRefModel" />
+          <xs:element minOccurs="0" name="JobStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastLocked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastUnlocked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LocalAgent" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="LocalAgentAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocalAgentName" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="MilestoneEvents" nillable="true" type="q2:ArrayOfMilestoneEvent" />
+          <xs:element minOccurs="0" name="OperationMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperatorDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperatorDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OperatorUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperatorUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Origin" nillable="true" type="q1:LocationKey" />
+          <xs:element minOccurs="0" name="OriginDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherChargesPaymentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherServiceBiztype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherServiceSubtype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OverseasAgent" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="PackageType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PackageTypeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PalletCount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PaymentInformationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PieceQuantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidCollect" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProjectCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RefNo" type="xs:int" />
+          <xs:element minOccurs="0" name="RefRemark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RefType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SalesType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SendKln" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ServiceRequestOptions" nillable="true" type="tns:ArrayOfServiceRequestOption" />
+          <xs:element minOccurs="0" name="Shipper" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="ShipperAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipperName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThirdParty" nillable="true" type="q1:CompanyKey" />
+          <xs:element minOccurs="0" name="ThirdPartyCompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThirdPartyCompanyId" nillable="true" type="xs:int" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" minOccurs="0" name="TransferStations" nillable="true" type="q3:ArrayOfJobStationLocalDataModel" />
+          <xs:element minOccurs="0" name="WarehouseCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AIAWBModel" nillable="true" type="tns:AIAWBModel" />
+  <xs:complexType name="ArrayOfAIAWBModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AIAWBModel" nillable="true" type="tns:AIAWBModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAIAWBModel" nillable="true" type="tns:ArrayOfAIAWBModel" />
+  <xs:complexType name="ArrayOfJobRefModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobRefModel" nillable="true" type="tns:JobRefModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobRefModel" nillable="true" type="tns:ArrayOfJobRefModel" />
+  <xs:complexType name="JobRefModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q4:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="RefNo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RefType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobRefModel" nillable="true" type="tns:JobRefModel" />
+  <xs:complexType name="ArrayOfServiceRequestOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceRequestOption" nillable="true" type="tns:ServiceRequestOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceRequestOption" nillable="true" type="tns:ArrayOfServiceRequestOption" />
+  <xs:complexType name="ServiceRequestOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsEnabled" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceRequestOption" nillable="true" type="tns:ServiceRequestOption" />
+</xs:schema>

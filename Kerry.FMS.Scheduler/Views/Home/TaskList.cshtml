@@ -1,0 +1,50 @@
+﻿@model List<Kerry.FMS.Scheduler.Models.ScheduleTask>
+<table class="table table-striped">
+    <tr>
+        <th>
+            Task Name
+        </th>
+        <th>
+            Task Group
+        </th>
+        <th>
+            Cron Expression
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Operation
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskKey.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskKey.Group)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CronString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @if (item.Status == "Disabled")
+                {
+                    <button type="submit" value="Run" class="btn btn-primary btn-md" onclick='this.form.action="@Url.Action("TaskList", new { TaskName = item.TaskName, SubmitType = "Run" })";'>@Html.Raw(Kerry.FMS.Scheduler.UI.Constant_Run)</button>
+                }
+                else
+                {
+                    <button type="submit" value="Pause" class="btn btn-primary btn-md" onclick='this.form.action="@Url.Action("TaskList", new { TaskName = item.TaskName, SubmitType = "Pause" })";'>@Html.Raw(Kerry.FMS.Scheduler.UI.Constant_Pause)</button>
+                }
+
+                <button type="button" value="Edit" class="btn btn-primary btn-md" onclick="javascript:EditCronString('@item.TaskName','@item.CronString'); return false;">@Html.Raw(Kerry.FMS.Scheduler.UI.Constant_Edit)</button>
+            </td>
+        </tr>
+    }
+</table>

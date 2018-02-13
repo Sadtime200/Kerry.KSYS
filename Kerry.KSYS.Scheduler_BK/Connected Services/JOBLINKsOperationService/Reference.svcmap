@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6e83aa96-c7d8-4feb-a1b6-390321bd639d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59228/Operation/JOBLINKsOperation.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JOBLINKsOperation.xsd" MetadataType="Schema" ID="6ec5d6e9-014d-4708-9dc3-92097f756e19" SourceId="1" SourceUrl="http://localhost:59228/Operation/JOBLINKsOperation.svc?xsd=xsd0" />
+    <MetadataFile FileName="JOBLINKsOperation1.xsd" MetadataType="Schema" ID="f739d390-f321-4905-aa68-eab8d4fbbbc1" SourceId="1" SourceUrl="http://localhost:59228/Operation/JOBLINKsOperation.svc?xsd=xsd1" />
+    <MetadataFile FileName="JOBLINKsOperation2.xsd" MetadataType="Schema" ID="4f905a1d-f771-4ff1-8ae7-dbe519747b70" SourceId="1" SourceUrl="http://localhost:59228/Operation/JOBLINKsOperation.svc?xsd=xsd2" />
+    <MetadataFile FileName="JOBLINKsOperation.wsdl" MetadataType="Wsdl" ID="a2bb3870-e344-451b-a2aa-44babc2d155e" SourceId="1" SourceUrl="http://localhost:59228/Operation/JOBLINKsOperation.svc?wsdl" />
+    <MetadataFile FileName="JOBLINKsOperation.disco" MetadataType="Disco" ID="09cbaab7-5ce0-47e3-9383-ac4df821c13d" SourceId="1" SourceUrl="http://localhost:59228/Operation/JOBLINKsOperation.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

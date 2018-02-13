@@ -1,0 +1,29 @@
+﻿@model List<Kerry.FMS.Scheduler.Models.Log>
+<table class="table table-striped">
+    <tr>
+        <th>
+            Record Date
+        </th>
+        <th>
+            Job Type
+        </th>
+        <th>
+            Info
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logtype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info)
+            </td>
+        </tr>
+    }
+</table>

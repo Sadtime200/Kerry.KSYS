@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<job-scheduling-data>
+  <schedule>
+    <name>JOBLINKsSupplymentScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JOBLINKsSupplymentScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0 0/2 * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+  <schedule>
+    <name>JOBConsolUnidUpdateScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JOBConsolUnidUpdateScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0 0/5 * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+  <schedule>
+    <name>JOBConsolUnidSupplymentScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JOBConsolUnidSupplymentScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0 0/2 * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+  <schedule>
+    <name>JOBConsolUnidRemoveScheduler</name>
+    <job-type>Kerry.KSYS.Scheduler.Jobs.JOBConsolUnidRemoveScheduler, Kerry.KSYS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0 0/2 * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+</job-scheduling-data>

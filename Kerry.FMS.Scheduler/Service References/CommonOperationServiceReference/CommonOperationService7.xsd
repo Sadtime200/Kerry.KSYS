@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport.Commands" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfMilestoneEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MilestoneEvent" nillable="true" type="tns:MilestoneEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMilestoneEvent" nillable="true" type="tns:ArrayOfMilestoneEvent" />
+  <xs:complexType name="MilestoneEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q1:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EventDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsInput" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sno" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MilestoneEvent" nillable="true" type="tns:MilestoneEvent" />
+  <xs:complexType name="ConsolOperationModel">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.AirExport.Commands" minOccurs="0" name="Commands" nillable="true" type="q2:ArrayOfConsolCommandBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsolOperationModel" nillable="true" type="tns:ConsolOperationModel" />
+  <xs:complexType name="AEAWBModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q3:JobModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmountOfInsurance" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BillOfLadingIssueDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BillOfLadingPlaceOfIssue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillingCalculationBasis" type="tns:BillingCalculationBasis" />
+          <xs:element minOccurs="0" name="BillingDimensionList" nillable="true" type="tns:ArrayOfDimensionsModel" />
+          <xs:element minOccurs="0" name="BillingQty" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="BillingQtyUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillingRate" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BillingSubTotal" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BillingVolume" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BillingVolumeUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillingVolumeWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BillingWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BillingWeightUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookedDimensionList" nillable="true" type="tns:ArrayOfDimensionsModel" />
+          <xs:element minOccurs="0" name="BookedQty" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="BookedQtyUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookedVolume" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BookedVolumeUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BookedVolumeWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BookedWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="BookedWeightUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CargoLoadingInstruction" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CarrierSignature" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChargeableWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectChargesDueToAgentAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectChargesDueToCarrierAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectTaxAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectTotalAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectTotalChargesAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectValuationAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CollectWeightAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Coloader" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="CommodityCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommodityDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Consignee" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="ConsigneeAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConsigneeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Customer" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="CustomerServiceDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerServiceDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerServiceUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerServiceUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsDeclareDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsDeclareDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsDeclareUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsDeclareUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsInspectDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsInspectDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomsInspectUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomsInspectUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DeclarantSignature" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeclaredValueForCarriage" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DeclaredValueForCustoms" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DeletedBillingDimensionList" nillable="true" type="tns:ArrayOfDimensionsModel" />
+          <xs:element minOccurs="0" name="DeletedBookedDimensionList" nillable="true" type="tns:ArrayOfDimensionsModel" />
+          <xs:element minOccurs="0" name="Destination" nillable="true" type="q3:LocationKey" />
+          <xs:element minOccurs="0" name="DestinationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EtaDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EtdDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Flight1Carrier" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="Flight1Destination" nillable="true" type="q3:LocationKey" />
+          <xs:element minOccurs="0" name="Flight2Carrier" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="Flight2Destination" nillable="true" type="q3:LocationKey" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Common" minOccurs="0" name="Flight3Carrier" nillable="true" type="q4:Airline" />
+          <xs:element minOccurs="0" name="Flight3Destination" nillable="true" type="q3:LocationKey" />
+          <xs:element minOccurs="0" name="FlightNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FreightPaymentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GoodsDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GrossWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GroundHandlingAgentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="HandlingInformation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Incoterms" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IssueBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastLocked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LastUnlocked" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MarksAndNumbers" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MasterDestinationCountryCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MasterDestinationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MasterDestinationId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MasterDestinationLocationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MilestoneEvents" nillable="true" type="tns:ArrayOfMilestoneEvent" />
+          <xs:element minOccurs="0" name="Notify" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="NotifyCompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotifyPartyAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperationMode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperatorDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperatorDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="OperatorUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OperatorUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Origin" nillable="true" type="q3:LocationKey" />
+          <xs:element minOccurs="0" name="OriginDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherChargeList" nillable="true" type="tns:ArrayOfOtherChargeModel" />
+          <xs:element minOccurs="0" name="OtherChargesDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherChargesPaymentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OverseasAgent" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="PaymentInformationDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrepaidChargesDueToAgentAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidChargesDueToCarrierAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidTaxAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidTotalAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidTotalChargesAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidValuationAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrepaidWeightAmount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ProjectCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceivedDimensionList" nillable="true" type="tns:ArrayOfDimensionsModel" />
+          <xs:element minOccurs="0" name="ReceivedQty" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ReceivedQtyUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceivedVolume" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ReceivedVolumeUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceivedVolumeWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ReceivedWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ReceivedWeightUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesDepartmentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesDepartmentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SalesType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesUserCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SalesUserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SendKln" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Shipper" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="ShipperAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipperCompanyCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipperName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShipperNameLocal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThirdParty" nillable="true" type="q3:CompanyKey" />
+          <xs:element minOccurs="0" name="TransactionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TransferStations" nillable="true" type="tns:ArrayOfJobStationLocalDataModel" />
+          <xs:element minOccurs="0" name="VolumeRatioDivisor" type="xs:int" />
+          <xs:element minOccurs="0" name="WarehouseStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AEAWBModel" nillable="true" type="tns:AEAWBModel" />
+  <xs:simpleType name="BillingCalculationBasis">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Q" />
+      <xs:enumeration value="W" />
+      <xs:enumeration value="V" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BillingCalculationBasis" nillable="true" type="tns:BillingCalculationBasis" />
+  <xs:complexType name="ArrayOfDimensionsModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DimensionsModel" nillable="true" type="tns:DimensionsModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDimensionsModel" nillable="true" type="tns:ArrayOfDimensionsModel" />
+  <xs:complexType name="DimensionsModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q5:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Height" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ItemType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="Length" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LengthUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pieces" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Stage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalItemCount" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalVolume" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalVolumeWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalWeight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Volume" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="VolumeUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WeightUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Width" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DimensionsModel" nillable="true" type="tns:DimensionsModel" />
+  <xs:complexType name="ArrayOfOtherChargeModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OtherChargeModel" nillable="true" type="tns:OtherChargeModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOtherChargeModel" nillable="true" type="tns:ArrayOfOtherChargeModel" />
+  <xs:complexType name="OtherChargeModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q6:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AwbId" type="xs:int" />
+          <xs:element minOccurs="0" name="ChargeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChargeCodeId" type="xs:int" />
+          <xs:element minOccurs="0" name="ChargeCodeMapCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChargeCodeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExchangeRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ForeignAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="LocalAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitRate" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OtherChargeModel" nillable="true" type="tns:OtherChargeModel" />
+  <xs:complexType name="ArrayOfJobStationLocalDataModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobStationLocalDataModel" nillable="true" type="tns:JobStationLocalDataModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobStationLocalDataModel" nillable="true" type="tns:ArrayOfJobStationLocalDataModel" />
+  <xs:complexType name="JobStationLocalDataModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationId" type="xs:int" />
+      <xs:element minOccurs="0" name="StationRole" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobStationLocalDataModel" nillable="true" type="tns:JobStationLocalDataModel" />
+  <xs:complexType name="JobModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="JobId" type="xs:int" />
+      <xs:element minOccurs="0" name="ShipmentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobModel" nillable="true" type="tns:JobModel" />
+  <xs:complexType name="ArrayOfEventGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventGroup" nillable="true" type="tns:EventGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventGroup" nillable="true" type="tns:ArrayOfEventGroup" />
+  <xs:complexType name="EventGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q7:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MilestoneEvents" nillable="true" type="tns:ArrayOfMilestoneEvent" />
+          <xs:element minOccurs="0" name="StationId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EventGroup" nillable="true" type="tns:EventGroup" />
+  <xs:complexType name="ParameterModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Biztype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ETD" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Station" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParameterModel" nillable="true" type="tns:ParameterModel" />
+  <xs:complexType name="ArrayOfChargeTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ChargeTemplate" nillable="true" type="tns:ChargeTemplate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfChargeTemplate" nillable="true" type="tns:ArrayOfChargeTemplate" />
+  <xs:complexType name="ChargeTemplate">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q8:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AirlineId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Biztype" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EffectiveFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EffectiveTo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsActive" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherChargeModelList" nillable="true" type="tns:ArrayOfOtherChargeModel" />
+          <xs:element minOccurs="0" name="RevenueCostModelList" nillable="true" type="tns:ArrayOfRevenueCostModel" />
+          <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChargeTemplate" nillable="true" type="tns:ChargeTemplate" />
+  <xs:complexType name="ArrayOfRevenueCostModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RevenueCostModel" nillable="true" type="tns:RevenueCostModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRevenueCostModel" nillable="true" type="tns:ArrayOfRevenueCostModel" />
+  <xs:complexType name="RevenueCostModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q9:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Allocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BillNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChargeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ChargeCodeId" type="xs:int" />
+          <xs:element minOccurs="0" name="ChargeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientGuid" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="CompanyId" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CostOrRevenue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+          <xs:element minOccurs="0" name="DecimalPlace" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DecimalPlaceCb" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExchangeRate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ForeignCurrency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HawbNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IncomingBillNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvoiceNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAllIn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAutoAllocation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsMaster" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PayReqNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RelatedId" type="xs:int" />
+          <xs:element minOccurs="0" name="RndMethodCb" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationId" type="xs:int" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Symbol" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalAmtFc" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalAmtLc" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitRate" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RevenueCostModel" nillable="true" type="tns:RevenueCostModel" />
+  <xs:complexType name="OtherParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AirlineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DestinationId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IATAregion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationId" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OtherParameter" nillable="true" type="tns:OtherParameter" />
+</xs:schema>

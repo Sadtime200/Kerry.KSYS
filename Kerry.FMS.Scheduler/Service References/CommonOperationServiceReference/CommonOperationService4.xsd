@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.EDoc" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.EDoc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:complexType name="JobDocList">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q1:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="JobDocModelList" nillable="true" type="tns:ArrayOfJobDocModel" />
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ShipmentNoList" nillable="true" type="q2:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobDocList" nillable="true" type="tns:JobDocList" />
+  <xs:complexType name="ArrayOfJobDocModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="JobDocModel" nillable="true" type="tns:JobDocModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfJobDocModel" nillable="true" type="tns:ArrayOfJobDocModel" />
+  <xs:complexType name="JobDocModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q3:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeliveryBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeliveryTimestamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DocNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocTypeAppearance" nillable="true" type="tns:DocTypeAppearance" />
+          <xs:element minOccurs="0" name="DocTypeCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Flag" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsEmailSend" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JobId" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceivedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReceivedTimestamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RefNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RefType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReturnedTimestamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Sno" type="xs:int" />
+          <xs:element minOccurs="0" name="UploadStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VersionNo" type="xs:int" />
+          <xs:element minOccurs="0" name="isEmailSend" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="JobDocModel" nillable="true" type="tns:JobDocModel" />
+  <xs:complexType name="DocTypeAppearance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dbCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocTypeAppearance" nillable="true" type="tns:DocTypeAppearance" />
+</xs:schema>

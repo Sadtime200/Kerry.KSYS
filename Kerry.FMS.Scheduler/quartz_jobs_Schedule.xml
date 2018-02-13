@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<job-scheduling-data>
+  <schedule>
+    <name>JobLockSyncScheduler</name>
+    <job-type>Kerry.FMS.Scheduler.Jobs.JobLockSyncScheduler, Kerry.FMS.Scheduler</job-type>
+    <durable>true</durable>
+    <recover>false</recover>
+    <cron-expression>0/10 * * * * ?</cron-expression>
+    <status>Enabled</status>
+  </schedule>
+
+</job-scheduling-data>

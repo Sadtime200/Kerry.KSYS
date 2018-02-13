@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Maintenance" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Maintenance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:22107/v1/Common/CommonOperationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" />
+  <xs:complexType name="StationModel">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Kerry.FMS.Model.Core" base="q1:DomainModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Airport" nillable="true" type="q1:LookupPlaceholder" />
+          <xs:element minOccurs="0" name="Company" nillable="true" type="q1:LookupPlaceholder" />
+          <xs:element minOccurs="0" name="CompanyId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Currency" nillable="true" type="q1:LookupPlaceholder" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Hierarchy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IsMain" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocalCurrency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seaport" nillable="true" type="q1:LookupPlaceholder" />
+          <xs:element minOccurs="0" name="StationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationLevel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationNameLocal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VolumeUOM" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WeightUOM" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="StationModel" nillable="true" type="tns:StationModel" />
+</xs:schema>
