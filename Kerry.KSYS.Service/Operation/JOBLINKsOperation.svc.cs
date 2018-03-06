@@ -57,13 +57,15 @@ namespace Kerry.KSYS.Service.Operation
                                    //Not exists in Job Link Table before//
                                    && (!ctx.JOBLINK.Any(l => l.SOURCE_UNID == l.JOB_UNID && l.JOB_UNID == j.UNID && l.TYPE.Equals("B")))
 
-                                   && DbFunctions.DiffDays(j.UPDATEDATE??j.CREATEDATE,DateTime.Now)<=1
+                                   && DbFunctions.DiffDays(j.UPDATEDATE??j.CREATEDATE,DateTime.Now)<=150
                                 select new JOBLINKsModel
                                    {
                                        Unid = j.UNID,
                                        Type = "B",
                                        SourceUnid = j.UNID
-                                   }).Take(200).ToList();
+                                   })
+                                   .Take(200)
+                                   .ToList();
 
                 var entities = new List<JOBLINK>();
                 foreach (var m in missJobLinks)

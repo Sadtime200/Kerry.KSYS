@@ -14,7 +14,7 @@
     <durable>true</durable>
     <recover>false</recover>
     <cron-expression>0 0/5 * * * ?</cron-expression>
-    <status>Enabled</status>
+    <status>Disabled</status>
   </schedule>
   <schedule>
     <name>JOBConsolUnidSupplymentScheduler</name>
@@ -30,6 +30,6 @@
     <durable>true</durable>
     <recover>false</recover>
     <cron-expression>0 0/2 * * * ?</cron-expression>
-    <status>Enabled</status>
+    <status>Disabled</status>
   </schedule>
 </job-scheduling-data>

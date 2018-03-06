@@ -35,7 +35,7 @@ namespace Kerry.KSYS.Service.Operation
                              &&ctx.JOB.Any(m=>m.SHPNO==j.CONSOLNO&&m.OWNERID.Equals(j.OWNERID)&&m.BIZTYPE.Equals(j.BIZTYPE)
                              &&string.IsNullOrEmpty(m.VOIDBY))
 
-                             && DbFunctions.DiffDays(j.UPDATEDATE ?? j.CREATEDATE, DateTime.Now) <= 1
+                             && DbFunctions.DiffDays(j.UPDATEDATE ?? j.CREATEDATE, DateTime.Now) <= 150
                              select j).ToList().Take(200);
 
                 foreach (var q in query)
@@ -73,7 +73,7 @@ namespace Kerry.KSYS.Service.Operation
                                         &&string.IsNullOrEmpty(m.VOIDBY)&&m.OWNERID.Equals(j.OWNERID)
                                         &&m.BIZTYPE.Equals(j.BIZTYPE))
                                  //&&ctx.JOB.Any(m=>m.SHPNO.Equals(j.CONSOLNO)&&m.OWNERID.Equals(j.OWNERID)&&m.UNID!=j.CONSOLLOT_UNID&&string.IsNullOrEmpty(m.VOIDBY))
-                                 && DbFunctions.DiffDays(j.UPDATEDATE ?? j.CREATEDATE, DateTime.Now) <= 1
+                                 && DbFunctions.DiffDays(j.UPDATEDATE ?? j.CREATEDATE, DateTime.Now) <= 150
                                  select j)
                                  .ToList()
                                  .Take(200)
@@ -126,7 +126,7 @@ namespace Kerry.KSYS.Service.Operation
                                   && string.IsNullOrEmpty(j.VOIDBY) && j.SHPTYPE.Equals("H")
                                   && string.IsNullOrEmpty(j.CONSOLNO) && j.CONSOLLOT_UNID != null
 
-                                  && DbFunctions.DiffDays(j.UPDATEDATE ?? j.CREATEDATE, DateTime.Now) <= 1
+                                  && DbFunctions.DiffDays(j.UPDATEDATE ?? j.CREATEDATE, DateTime.Now) <= 150
                                  select j)
                                  .Take(200)
                                  .ToList()
